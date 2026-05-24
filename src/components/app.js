@@ -9,7 +9,7 @@ import Blog from "./pages/blog"
 import Contact from "./pages/contact"
 import AddBlog from "./pages/add.blog"
 import PortfolioDetails from "./portfolio/portfolio-details"
-import Nomatch from "./portfolio/no-match"
+import NoMatch from "./portfolio/no-match"
 
 
 export default class App extends Component {
@@ -22,12 +22,13 @@ export default class App extends Component {
             <div>{moment().format('MMMM Do YYYY, h:mm:ss a')}</div>
             <NavigationContainer/>
             <Switch>  
-              <Route exact path='/' component ={Home}></Route>
-              <Route path= '/about' component ={About}></Route>
-              <Route path= '/contact' component ={Contact}></Route>
-              <Route path= '/blog' component ={Blog}></Route>
-              <Route path= '/portfolio/:slug' component ={PortfolioDetails}></Route>
-              <Route path= '/add-Blog' component ={AddBlog}></Route>             
+              <Route exact path='/' component ={Home}/>
+              <Route path= '/about' component ={About}/>
+              <Route path= '/contact' component ={Contact}/>
+              <Route path= '/blog' component ={Blog}/>
+              <Route exact path= '/portfolio/:slug' component ={PortfolioDetails}/>
+              <Route path= '/add-Blog' component ={AddBlog}/>  
+              <Route component ={NoMatch}/>           
             </Switch>
           </div>
         </Router>
