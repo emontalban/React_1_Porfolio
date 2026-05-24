@@ -8,32 +8,29 @@ import About from "./pages/about"
 import Blog from "./pages/blog"
 import Contact from "./pages/contact"
 import AddBlog from "./pages/add.blog"
-import PortfolioDetails from "./pages/portfolio-details"
+import PortfolioDetails from "./portfolio/portfolio-details"
+import Nomatch from "./portfolio/no-match"
 
 
 export default class App extends Component {
   render() {
     return (
-      <div className='app'>
-        <h1>DevCamp React Starter</h1>
-       
+      <div className='app'>    
         <Router>
           <div>
+            <h1>Portfolio React</h1>
+            <div>{moment().format('MMMM Do YYYY, h:mm:ss a')}</div>
             <NavigationContainer/>
-            <Switch>
-             
-              <Route exact path= '/' component ={Home}></Route>
+            <Switch>  
+              <Route exact path='/' component ={Home}></Route>
               <Route path= '/about' component ={About}></Route>
               <Route path= '/contact' component ={Contact}></Route>
               <Route path= '/blog' component ={Blog}></Route>
               <Route path= '/portfolio/:slug' component ={PortfolioDetails}></Route>
-              <Route path= '/add-Blog' component ={AddBlog}></Route>
-              
+              <Route path= '/add-Blog' component ={AddBlog}></Route>             
             </Switch>
           </div>
         </Router>
-        <div>{moment().format('MMMM Do YYYY, h:mm:ss a')}</div>
-        <PortfolioContainer/>
       </div>
     );
   }

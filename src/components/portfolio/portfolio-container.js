@@ -10,11 +10,12 @@ export default class PortfolioContainer extends Component{
         this.state = {
             pageTitle : "Welcome to my portfolio",
             data :[
-                 {"id": 1, "title": "Introducción a React", "category": "Frontend"},
-                {"id": 2,"title": "Node.js Básico","category": "Backend"},
-                {"id": 3,"title": "Diseño Responsive","category": "CSS"},
-                {"id": 4,"title": "Bases de Datos SQL","category": "Database"},
-                {"id": 5,"title": "Autenticación JWT","category": "Seguridad"}
+                 {"id": 1, "title": "Introducción a React", "category": "Frontend", slug: "Introducción-a-React"},
+                {"id": 2,"title": "Node.js Básico","category": "Backend", slug: "Node.js-Básico"},
+                {"id": 3,"title": "Diseño Responsive","category": "CSS", slug: "Diseño-Responsive"},
+                {"id": 4,"title": "Bases de Datos SQL","category": "Database", slug: "Bases-de-Datos-SQL"},
+                {"id": 5,"title": "Autenticación JWT","category": "Seguridad", slug: "Autenticación-JWT"},
+                
             ]
         }
         this.handleFilter = this.handleFilter.bind(this);
@@ -29,7 +30,7 @@ export default class PortfolioContainer extends Component{
     PortfolioItem(){
      
         return this.state.data.map(element =>{
-            return <PortfolioItem key={element.id} title={element.title} category={element.category}/>
+            return <PortfolioItem key={element.id} title={element.title} category={element.category} slug={element.slug}/>
         })
     }
     
@@ -40,7 +41,7 @@ export default class PortfolioContainer extends Component{
         return(
             <div>
                 <h2>{this.state.pageTitle}</h2>
-                <PortfolioItem/>
+              
                 
                 <div className="categorias">
                     <button onClick={() => this.handleFilter('Frontend')}>Frontend</button>

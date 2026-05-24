@@ -1,11 +1,11 @@
 import React from "react";
-import { Link } from "react-router-dom"
 
-export default function() {
+export default function(props) {
+    
     return(
         <div>
-            <h2>Portfolio Details </h2>
+            <h2>Portfolio Details for {props.match.params.slug} </h2>
           
         </div>
-    )
+    );
 }
