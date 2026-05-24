@@ -4,8 +4,8 @@ import { Link } from "react-router-dom"
 export default function() {
     return(
         <div>
-            <h2>Blog</h2>
-           <Link to="/about">Read more about myself</Link>
+            <h2>Portfolio Details </h2>
+          
         </div>
     )
 }

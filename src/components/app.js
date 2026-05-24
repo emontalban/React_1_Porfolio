@@ -8,6 +8,7 @@ import About from "./pages/about"
 import Blog from "./pages/blog"
 import Contact from "./pages/contact"
 import AddBlog from "./pages/add.blog"
+import PortfolioDetails from "./pages/portfolio-details"
 
 
 export default class App extends Component {
@@ -25,6 +26,7 @@ export default class App extends Component {
               <Route path= '/about' component ={About}></Route>
               <Route path= '/contact' component ={Contact}></Route>
               <Route path= '/blog' component ={Blog}></Route>
+              <Route path= '/portfolio/:slug' component ={PortfolioDetails}></Route>
               <Route path= '/add-Blog' component ={AddBlog}></Route>
               
             </Switch>
