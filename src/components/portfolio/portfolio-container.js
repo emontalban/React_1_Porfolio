@@ -1,5 +1,9 @@
 import React, { Component } from "react";
+import axios from "axios";
+
 import PortfolioItem from "./portfolio-item";
+
+
 
 
 export default class PortfolioContainer extends Component{
@@ -9,14 +13,8 @@ export default class PortfolioContainer extends Component{
 
         this.state = {
             pageTitle : "Welcome to my portfolio",
-            data :[
-                 {"id": 1, "title": "Introducción a React", "category": "Frontend", slug: "Introducción-a-React"},
-                {"id": 2,"title": "Node.js Básico","category": "Backend", slug: "Node.js-Básico"},
-                {"id": 3,"title": "Diseño Responsive","category": "CSS", slug: "Diseño-Responsive"},
-                {"id": 4,"title": "Bases de Datos SQL","category": "Database", slug: "Bases-de-Datos-SQL"},
-                {"id": 5,"title": "Autenticación JWT","category": "Seguridad", slug: "Autenticación-JWT"},
-                
-            ]
+            isLoading: false,
+            data :[]
         }
         this.handleFilter = this.handleFilter.bind(this);
     }
@@ -27,13 +25,27 @@ export default class PortfolioContainer extends Component{
             })
         })
     }
-    PortfolioItem(){
-     
+    getPortfolioItems() {
+    axios
+      .get("https://emontalban.devcamp.space/portfolio/portfolio_items")
+      .then(response => {
+        this.setState({
+          data: response.data.portfolio_items
+        });
+      })
+      .catch(error => {
+        console.log(error);
+      });
+  }
+    PortfolioItem(){   
         return this.state.data.map(element =>{
-            return <PortfolioItem key={element.id} title={element.title} category={element.category} slug={element.slug}/>
+            return <PortfolioItem key={element.id} title={element.name} url ={element.url} category={element.category} slug={element.id}/>
         })
     }
     
+    componentDidMount() {
+    this.getPortfolioItems();
+  }
     render() {
         if(this.state.isLoading){
             return <div>Loading ........</div>
@@ -42,7 +54,6 @@ export default class PortfolioContainer extends Component{
             <div>
                 <h2>{this.state.pageTitle}</h2>
               
-                
                 <div className="categorias">
                     <button onClick={() => this.handleFilter('Frontend')}>Frontend</button>
                     <button onClick={() =>this.handleFilter('Backend')}>Backend</button>
