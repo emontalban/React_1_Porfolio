@@ -21,7 +21,7 @@ export default class PortfolioContainer extends Component{
     handleFilter(filter){
         this.setState({
             data: this.state.data.filter(item =>{
-                return item.category === filter;
+                return filter.includes(item.category);
             })
         })
     }
@@ -39,6 +39,8 @@ export default class PortfolioContainer extends Component{
   }
     portfolioItems() {
     return this.state.data.map(item => {
+      console.log(item.category);
+      
       return <PortfolioItem key={item.id} item={item} />;
     });
   }
@@ -51,18 +53,45 @@ export default class PortfolioContainer extends Component{
             return <div>Loading ........</div>
         }
         return(
-            <div>
-                <h2>{this.state.pageTitle}</h2>
-              
-                <div className="categorias">
-                    <button onClick={() => this.handleFilter('Frontend')}>Frontend</button>
-                    <button onClick={() =>this.handleFilter('Backend')}>Backend</button>
-                    <button onClick={() =>this.handleFilter('CSS')}>CSS</button>
-                    <button onClick={() =>this.handleFilter('Database')}>Database</button>
-                    <button onClick={() =>this.handleFilter('Seguridad')}>Seguridad</button>
-                    </div>
-                    <div className="portfolio-items-wrapper">{this.portfolioItems()}</div>
+            <div className="portfolio-items-wrapper">
+                  <button className="btn"
+                    onClick={() =>
+                      this.handleFilter([
+                        "Ecommerce",
+                        "Social",
+                        "Productividad",
+                        "Automatizacion"
+                      ])
+                    }
+                  >
+                    eCommerce
+                  </button>
+
+                  <button className="btn"
+                    onClick={() =>
+                      this.handleFilter(["Eventos"])
+                    }
+                  >
+                    Scheduling
+                  </button>
+
+                  <button className="btn"
+                    onClick={() =>
+                      this.handleFilter([
+                        "Educacion",
+                        "Analytics",
+                        "Bootcamp",
+                        "Desarrollo",
+                        "EdTech",
+                        "Seguridad",
+                        "Open Source"
+                      ])
+                    }
+                  >
+                    Enterprise
+                  </button>
                 
+                 {this.portfolioItems()}                
             </div>
 
         );
