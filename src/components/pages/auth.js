@@ -1,9 +1,9 @@
-import React, { Component } from 'react';
-import Login from '../auth/login';
-import loginImg from "../../../static/assets/images/auth/login.jpg"
+import React, { Component } from "react";
+import Login from "../auth/login";
+import loginImg from "../../../static/assets/images/auth/login.jpg";
 
 export default class Auth extends Component {
-   constructor(props) {
+  constructor(props) {
     super(props);
 
     this.handleSuccessfulAuth = this.handleSuccessfulAuth.bind(this);
@@ -17,25 +17,25 @@ export default class Auth extends Component {
 
   handleUnsuccessfulAuth() {
     this.props.handleUnsuccessfulLogin();
-  } 
+  }
+
   render() {
     return (
-        <div className='auth-page-wrapper'>
-            <div className='left-column'
-            style = {{
-                backgroundImage:`url(${loginImg})`
-            }}>
+      <div className="auth-page-wrapper">
+        <div
+          className="left-column"
+          style={{
+            backgroundImage: `url(${loginImg})`
+          }}
+        />
 
-            </div>
-            <div className='right-column'>
-                <Login
-                    handleSuccessfulAuth={this.handleSuccessfulAuth}
-                    handleUnsuccessfulAuth={this.handleUnsuccessfulAuth}
-                />
-            </div>
-
-        
+        <div className="right-column">
+          <Login
+            handleSuccessfulAuth={this.handleSuccessfulAuth}
+            handleUnsuccessfulAuth={this.handleUnsuccessfulAuth}
+          />
         </div>
+      </div>
     );
   }
 }

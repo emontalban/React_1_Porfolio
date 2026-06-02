@@ -1,18 +1,15 @@
-import React, { Component } from 'react';
-import {BrowserRouter as Router, Switch, Route} from "react-router-dom"
-import axios from 'axios';
+import React, { Component } from "react";
+import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
+import axios from "axios";
 
-import PortfolioContainer from './portfolio/portfolio-container';
-import NavigationContainer from './navigation/navigation-container';
-import Home from "./pages/home"
-import About from "./pages/about"
-import Contact from "./pages/contact"
-import Blog from "./pages/blog"
-import AddBlog from "./pages/add.blog"
-import PortfolioDetails from "./portfolio/portfolio-details"
-import Auth from "./pages/auth"
-import NoMatch from "./portfolio/no-match"
-
+import NavigationContainer from "./navigation/navigation-container";
+import Home from "./pages/home";
+import About from "./pages/about";
+import Contact from "./pages/contact";
+import Blog from "./pages/blog";
+import PortfolioDetail from "./portfolio/portfolio-detail";
+import Auth from "./pages/auth";
+import NoMatch from "./pages/no-match";
 
 export default class App extends Component {
   constructor(props) {
@@ -47,10 +44,6 @@ export default class App extends Component {
         const loggedIn = response.data.logged_in;
         const loggedInStatus = this.state.loggedInStatus;
 
-        // If loggedIn and status LOGGED_IN => return data
-        // If loggedIn status NOT_LOGGED_IN => update state
-        // If not loggedIn and status LOGGED_IN => update state
-
         if (loggedIn && loggedInStatus === "LOGGED_IN") {
           return loggedIn;
         } else if (loggedIn && loggedInStatus === "NOT_LOGGED_IN") {
@@ -74,12 +67,16 @@ export default class App extends Component {
 
   render() {
     return (
-      <div className="container">    
+      <div className="container">
         <Router>
           <div>
-            <NavigationContainer/>
-            <Switch>  
-              <Route exact path='/' component ={Home}/>
+            <NavigationContainer loggedInStatus={this.state.loggedInStatus} />
+
+            <h2>{this.state.loggedInStatus}</h2>
+
+            <Switch>
+              <Route exact path="/" component={Home} />
+
               <Route
                 path="/auth"
                 render={props => (
@@ -90,12 +87,16 @@ export default class App extends Component {
                   />
                 )}
               />
-              <Route path= '/about' component ={About}/>
-              <Route path= '/contact' component ={Contact}/>
-              <Route path= '/blog' component ={Blog}/>
-              <Route exact path= '/portfolio/:slug' component ={PortfolioDetails}/>
-              <Route path= '/add-Blog' component ={AddBlog}/>  
-              <Route component ={NoMatch}/>           
+
+              <Route path="/about-me" component={About} />
+              <Route path="/contact" component={Contact} />
+              <Route path="/blog" component={Blog} />
+              <Route
+                exact
+                path="/portfolio/:slug"
+                component={PortfolioDetail}
+              />
+              <Route component={NoMatch} />
             </Switch>
           </div>
         </Router>
