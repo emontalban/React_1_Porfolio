@@ -57,42 +57,41 @@ export default class PortfolioForm extends Component {
 
     render() {
         return (
-        <div>
-            <h1> este es el profolio funcionanado</h1>
-            <form onSubmit={this.handleSubmit}>
-                <div>
-                    <input type='text' name='name' placeholder='Portfolio Item Name' value = {this.state.name} onChange={this.handleChange}></input>
+       
+        <form onSubmit={this.handleSubmit} className='portfolio-form-wrapper'>
+            <div>
+                <input type='text' name='name' placeholder='Portfolio Item Name' value = {this.state.name} onChange={this.handleChange}></input>
 
-                    <input type='text' name="url" placeholder='URL' value = {this.state.url} onChange={this.handleChange}></input>
-                </div>
-                <div>
-                    <input type='text' name='position' placeholder='Position' value = {this.state.position} onChange={this.handleChange}></input>
+                <input type='text' name="url" placeholder='URL' value = {this.state.url} onChange={this.handleChange}></input>
+            </div>
+            <div>
+                <input type='text' name='position' placeholder='Position' value = {this.state.position} onChange={this.handleChange}></input>
 
-                    <select name="category" value = {this.state.category} onChange={this.handleChange}>
-                        <option>Category</option>
-                        <option value="Ecommerce">Ecommerce</option>
-                        <option value="Social">Social</option>
-                        <option value="Productividad">Productividad</option>
-                        <option value="Automatizacion">Automatizacion</option>
-                        <option value="Eventos">Eventos</option>
-                        <option value="Bootcamp">Bootcamp</option>
-                        <option value="Desarrollo">Desarrollo</option>
-                        <option value="Educacion">Educacion</option>
-                        <option value="Analytics">Analytics</option>
-                        <option value="EdTech">EdTech</option>
-                        <option value="Seguridad">Seguridad</option>
-                        <option value="Open Source">Open Source</option>
-                    </select>
-                </div>
-                <div>
-                    <textarea type="text" name="description" placeholder='Description' value = {this.state.description} onChange={this.handleChange}></textarea>
-                </div>
-                <div>
-                    <button type='submit'>Save</button>
-                </div>
-                
-            </form>
-        </div>
+                <select name="category" value = {this.state.category} onChange={this.handleChange}>
+                    <option>Category</option>
+                    <option value="Ecommerce">Ecommerce</option>
+                    <option value="Social">Social</option>
+                    <option value="Productividad">Productividad</option>
+                    <option value="Automatizacion">Automatizacion</option>
+                    <option value="Eventos">Eventos</option>
+                    <option value="Bootcamp">Bootcamp</option>
+                    <option value="Desarrollo">Desarrollo</option>
+                    <option value="Educacion">Educacion</option>
+                    <option value="Analytics">Analytics</option>
+                    <option value="EdTech">EdTech</option>
+                    <option value="Seguridad">Seguridad</option>
+                    <option value="Open Source">Open Source</option>
+                </select>
+            </div>
+            <div>
+                <textarea type="text" name="description" placeholder='Description' value = {this.state.description} onChange={this.handleChange}></textarea>
+            </div>
+            <div>
+                <button type='submit'>Save</button>
+            </div>
+            
+        </form>
+
         );
     }
 }
