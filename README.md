@@ -45,5 +45,8 @@ En la version
 node -v
 # v14.15
 ```
-
+Instalamos react-dropzone
+```bash
+npm i react-dropzone-component
+```
 
