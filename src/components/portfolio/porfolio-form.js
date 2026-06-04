@@ -1,9 +1,10 @@
 import React, { Component } from 'react';
+import axios from 'axios';
 
 export default class PortfolioForm extends Component {
     constructor(props){
         super(props);
-
+        // los valores por defectos son nulos si queremos que tenga un valor por defecto lo ñadimos aqui en vez de las dobles comillas "valor por defecto"
         this.state = {
             name : "",
             description: "", 
@@ -20,13 +21,15 @@ export default class PortfolioForm extends Component {
     }
 
     buildForm(){
-        let formData = new FormData;
+        let formData = new FormData();
 
         formData.append("portfolio_item[name]", this.state.name);
         formData.append("portfolio_item[description]", this.state.description);
         formData.append("portfolio_item[url]", this.state.url);
         formData.append("portfolio_item[category]", this.state.category);
         formData.append("portfolio_item[position]", this.state.position);
+
+        return formData;
     }
 
     handleChange(event) {
@@ -36,7 +39,19 @@ export default class PortfolioForm extends Component {
     }
 
     handleSubmit(event) {
-        this.buildForm();
+        axios
+        .post(
+            "https://emontalban.devcamp.space/portfolio/portfolio_items",
+            this.buildForm(),
+            { withCredentials: true }
+        )
+        .then(response => {
+            this.props.handleSuccessfulFormSubmission(response.data.portfolio_item);
+            console.log("response", response);
+        })
+        .catch(error => {
+            console.log("portfolio form handleSubmit error", error);
+        });
         event.preventDefault();
     }
 
@@ -53,7 +68,21 @@ export default class PortfolioForm extends Component {
                 <div>
                     <input type='text' name='position' placeholder='Position' value = {this.state.position} onChange={this.handleChange}></input>
 
-                    <input type="text" name="category" placeholder='Category' value = {this.state.category} onChange={this.handleChange}></input>
+                    <select name="category" value = {this.state.category} onChange={this.handleChange}>
+                        <option>Category</option>
+                        <option value="Ecommerce">Ecommerce</option>
+                        <option value="Social">Social</option>
+                        <option value="Productividad">Productividad</option>
+                        <option value="Automatizacion">Automatizacion</option>
+                        <option value="Eventos">Eventos</option>
+                        <option value="Bootcamp">Bootcamp</option>
+                        <option value="Desarrollo">Desarrollo</option>
+                        <option value="Educacion">Educacion</option>
+                        <option value="Analytics">Analytics</option>
+                        <option value="EdTech">EdTech</option>
+                        <option value="Seguridad">Seguridad</option>
+                        <option value="Open Source">Open Source</option>
+                    </select>
                 </div>
                 <div>
                     <textarea type="text" name="description" placeholder='Description' value = {this.state.description} onChange={this.handleChange}></textarea>

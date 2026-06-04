@@ -69,7 +69,10 @@ export default class PortfolioContainer extends Component {
 
                   <button className="btn"
                     onClick={() =>
-                      this.handleFilter(["Eventos"])
+                      this.handleFilter([
+                        "Eventos",
+                        "Bootcamp",
+                        "Desarrollo"])
                     }
                   >
                     Scheduling
@@ -80,8 +83,6 @@ export default class PortfolioContainer extends Component {
                       this.handleFilter([
                         "Educacion",
                         "Analytics",
-                        "Bootcamp",
-                        "Desarrollo",
                         "EdTech",
                         "Seguridad",
                         "Open Source"
