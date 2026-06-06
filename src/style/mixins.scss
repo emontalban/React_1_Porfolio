@@ -17,7 +17,7 @@
         background-color: $dark-teal;
     }
 }
-@mixin input-element{
+@mixin input-element(){
     input{
         font-family: "Titillium Web", sans-serif;
         color: $charcoal;
@@ -36,4 +36,8 @@
             border-bottom :1px solid $dark-teal;
         }
     }
+}
+@mixin base-grid(){
+    display: grid;
+    grid-gap: 21px;
 }
