@@ -50,3 +50,8 @@ Instalamos react-dropzone
 npm i react-dropzone-component
 ```
 
+Instalamos las librerias de font-awesome
+```bash
+npm install @fortawesome/fontawesome-svg-core@1.2.36 @fortawesome/free-solid-svg-icons@5.15.4 @fortawesome/react-fontawesome@0.1.19
+```
+
