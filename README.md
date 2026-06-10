@@ -55,3 +55,8 @@ Instalamos las librerias de font-awesome
 npm install @fortawesome/fontawesome-svg-core@1.2.36 @fortawesome/free-solid-svg-icons@5.15.4 @fortawesome/react-fontawesome@0.1.19
 ```
 
+Instalamos la librerias React--modal
+```bash
+npm i react-modal
+``
+
