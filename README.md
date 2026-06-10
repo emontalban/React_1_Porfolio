@@ -58,5 +58,10 @@ npm install @fortawesome/fontawesome-svg-core@1.2.36 @fortawesome/free-solid-svg
 Instalamos la librerias React--modal
 ```bash
 npm i react-modal
-``
+```
+
+Instalamos las  4 librerias  de draft
+```bash
+npm i draft-js react-draft-wysiwyg draftjs-to-html html-to-draftjs
+```
 
