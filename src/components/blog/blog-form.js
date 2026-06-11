@@ -44,11 +44,10 @@ export default class BlogForm extends Component {
             blog_status: "",
             content: ""
             });
-            
+
             this.props.handleSuccessfullFormSubmission(
             response.data.portfolio_blog
             );
-
             
         })
         .catch(error => {

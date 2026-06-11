@@ -70,3 +70,15 @@ Instalamos la libreria react-html-parse
 npm i react-html-parser
 
 ```
+
+Instalamos la libreria striptag
+- Te permite eliminar las etiquetas html
+```bash
+npm i striptags
+```
+
+Instalamos react-truncate
+-  te da un componente que te permite desarrollar resumente
+```bash
+npm i react-truncate
+```
