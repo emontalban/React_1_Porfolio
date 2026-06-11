@@ -65,3 +65,8 @@ Instalamos las  4 librerias  de draft
 npm i draft-js react-draft-wysiwyg draftjs-to-html html-to-draftjs
 ```
 
+Instalamos la libreria react-html-parse
+```bash
+npm i react-html-parser
+
+```
