@@ -1,6 +1,5 @@
 import React from "react";
 
-
 const BlogFeaturedImage = props => {
   if (!props.img) {
     return null;
