@@ -84,7 +84,7 @@ export default class BlogForm extends Component {
         handleSubmit(event) {
         axios
             .post(
-            "https://jordan.devcamp.space/portfolio/portfolio_blogs",
+            "https://emontalban.devcamp.space/portfolio/portfolio_blogs",
             this.buildForm(),
             { withCredentials: true }
             )
@@ -141,6 +141,8 @@ export default class BlogForm extends Component {
             <div className="one-column">
                 <RichTextEditor
                 handleRichTextEditorChange={this.handleRichTextEditorChange}
+                editMode = {this.props.editMode}
+                contentToEdit = {this.props.editMode && this.props.blog.content ? this.props.blog.content : null} 
                 />
             </div>
 
