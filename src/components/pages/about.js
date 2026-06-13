@@ -1,25 +1,22 @@
 
-import React, { Component } from 'react';
+import React from 'react';
 
 import aboutImg from "../../../static/assets/images/about/about.png";
 import Biography from '../about/biography';
 
-export default class About extends Component {
-    render() {
-        return (
-        <div className="about-wrapper">
-            <div className="left-column"
-                style={{
-                    backgroundImage: `url(${aboutImg})`
-                }}/>
+export default function About (){
+    return (
+    <div className="content-page-wrapper">
+        <div className="left-column"
+            style={{
+                backgroundImage: `url(${aboutImg})`
+            }}/>
 
-            <div className="right-column">
-                <Biography />
-            </div>
-                    
-        
-    
+        <div className="right-column">
+            <Biography />
         </div>
-        );
-    }
+                
+    </div>
+    );
+    
 }
