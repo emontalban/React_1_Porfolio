@@ -88,7 +88,7 @@ class Blog extends Component {
 
         axios
         .get(
-            `https://emontalban.devcamp.space/portfolio/portfolio_blogs?page=${this
+            `https://odarna.devcamp.space/portfolio/portfolio_blogs?page=${this
             .state.currentPage}`,
             {
             withCredentials: true

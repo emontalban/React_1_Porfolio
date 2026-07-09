@@ -27,7 +27,7 @@ export default class BlogDetail extends Component {
     getBlogItem() {
         axios
         .get(
-            `https://emontalban.devcamp.space/portfolio/portfolio_blogs/${
+            `https://odarna.devcamp.space/portfolio/portfolio_blogs/${
             this.state.currentId
             }`
         )

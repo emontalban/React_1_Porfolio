@@ -29,7 +29,7 @@ export default class PortfolioContainer extends Component {
 
     getPortfolioItems(filter = null) {
         axios
-        .get("https://emontalban.devcamp.space/portfolio/portfolio_items")
+        .get("https://odarna.devcamp.space/portfolio/portfolio_items")
         .then(response => {
             if(filter){
                 this.setState({

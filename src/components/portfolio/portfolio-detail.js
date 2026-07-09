@@ -18,7 +18,7 @@ export default class PortfolioDetail extends Component {
     getPortfolioItem() {
         axios
         .get(
-            `https://emontalban.devcamp.space/portfolio/portfolio_items/${
+            `https://odarna.devcamp.space/portfolio/portfolio_items/${
             this.props.match.params.slug
             }`,
             { withCredentials: true }

@@ -19,7 +19,7 @@ export default class PortfolioForm extends Component {
       banner_image: "",
       logo: "",
       editMode: false,
-      apiUrl: "https://emontalban.devcamp.space/portfolio/portfolio_items",
+      apiUrl: "https://odarna.devcamp.space/portfolio/portfolio_items",
       apiAction: "post"
     };
 
@@ -77,7 +77,7 @@ export default class PortfolioForm extends Component {
         position: position || "",
         url: url || "",
         editMode: true,
-        apiUrl: `https://emontalban.devcamp.space/portfolio/portfolio_items/${id}`,
+        apiUrl: `https://odarna.devcamp.space/portfolio/portfolio_items/${id}`,
         apiAction: "patch",
         thumb_image_url: thumb_image_url || "",
         banner_image_url: banner_image_url || "",
@@ -173,7 +173,7 @@ export default class PortfolioForm extends Component {
           banner_image: "",
           logo: "",
           editMode: false,
-          apiUrl: "https://emontalban.devcamp.space/portfolio/portfolio_items",
+          apiUrl: "https://odarna.devcamp.space/portfolio/portfolio_items",
           apiAction: "post"
         });
 
