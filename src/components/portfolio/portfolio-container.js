@@ -34,7 +34,7 @@ export default class PortfolioContainer extends Component {
             if(filter){
                 this.setState({
                     data: response.data.portfolio_items.filter(item => {
-                        return filter.includes(item.category);
+                        return item.category === filter;
                     })
                 });
 
@@ -69,52 +69,38 @@ export default class PortfolioContainer extends Component {
         return (
         <div className="hompage-wrapper" >
             <div className="filter-links">
-            <div className="portfolio-items-wrapper">
-            <button className="btn"
-                        onClick={() =>
-                            this.handleFilter([
-                            "Ecommerce",
-                            "Social",
-                            "Productividad",
-                            "Automatizacion"
-                            ])
-                        }
-                        >
-                        eCommerce
-                        </button>
+                <div className="portfolio-items-wrapper">
+                    <button className="btn"
+                                onClick={() =>
+                                    this.handleFilter("Vue")
+                                }
+                                >
+                            Vue
+                            </button>
 
-                        <button className="btn"
-                        onClick={() =>
-                            this.handleFilter([
-                            "Eventos",
-                            "Bootcamp",
-                            "Desarrollo"])
-                        }
-                        >
-                        Scheduling
-                        </button>
+                            <button className="btn"
+                            onClick={() =>
+                                this.handleFilter("React")
+                            }
+                            >
+                            React
+                            </button>
 
-                        <button className="btn"
-                        onClick={() =>
-                            this.handleFilter([
-                            "Educacion",
-                            "Analytics",
-                            "EdTech",
-                            "Seguridad",
-                            "Open Source"
-                            ])
-                        }
-                        >
-                        Enterprise
-                        </button>
-                        <button className="btn"
-                        onClick={() =>
-                            this.handleFilter(
-                            "CLEAR_FILTERS")
-                        }
-                        >
-                        All
-                        </button>
+                            <button className="btn"
+                            onClick={() =>
+                                this.handleFilter("JavaScript")
+                            }
+                            >
+                            JavaScript
+                            </button>
+                            <button className="btn"
+                            onClick={() =>
+                                this.handleFilter(
+                                "CLEAR_FILTERS")
+                            }
+                            >
+                            All
+                            </button>
                 </div>
                 <div className="portfolio-items-wrapper">{this.portfolioItems()}</div>
             
