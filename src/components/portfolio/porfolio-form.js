@@ -12,7 +12,7 @@ export default class PortfolioForm extends Component {
     this.state = {
       name: "",
       description: "",
-      category: "eCommerce",
+      category: "",
       position: "",
       url: "",
       thumb_image: "",
@@ -73,7 +73,7 @@ export default class PortfolioForm extends Component {
         id: id,
         name: name || "",
         description: description || "",
-        category: category || "eCommerce",
+        category: category || "",
         position: position || "",
         url: url || "",
         editMode: true,
@@ -166,7 +166,7 @@ export default class PortfolioForm extends Component {
         this.setState({
           name: "",
           description: "",
-          category: "eCommerce",
+          category: "",
           position: "",
           url: "",
           thumb_image: "",
@@ -220,18 +220,9 @@ export default class PortfolioForm extends Component {
 
           <select name="category" value = {this.state.category} onChange={this.handleChange} className='select-element'>
                     <option>Category</option>
-                    <option value="Ecommerce">Ecommerce</option>
-                    <option value="Social">Social</option>
-                    <option value="Productividad">Productividad</option>
-                    <option value="Automatizacion">Automatizacion</option>
-                    <option value="Eventos">Eventos</option>
-                    <option value="Bootcamp">Bootcamp</option>
-                    <option value="Desarrollo">Desarrollo</option>
-                    <option value="Educacion">Educacion</option>
-                    <option value="Analytics">Analytics</option>
-                    <option value="EdTech">EdTech</option>
-                    <option value="Seguridad">Seguridad</option>
-                    <option value="Open Source">Open Source</option>
+                    <option value="Vue">Vue</option>
+                    <option value="React">React</option>
+                    <option value="JavaScript">JavaScript</option>
                 </select>
         </div>
 

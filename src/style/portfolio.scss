@@ -1,4 +1,9 @@
-.portfolio-items-wrapper {
+.portfolio-items-wrapper-buttons{
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr 1fr;
+
+}
+.portfolio-items-wrapper{
   display: grid;
   grid-template-columns: 1fr 1fr 1fr;
 

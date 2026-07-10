@@ -69,7 +69,7 @@ export default class PortfolioContainer extends Component {
         return (
         <div className="hompage-wrapper" >
             <div className="filter-links">
-                <div className="portfolio-items-wrapper">
+                <div className="portfolio-items-wrapper-buttons">
                     <button className="btn"
                                 onClick={() =>
                                     this.handleFilter("Vue")
