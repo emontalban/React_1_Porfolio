@@ -1,3 +1,7 @@
+
+@use "./mixins" as *;
+
+
 .one-column {
   @include base-grid();
   grid-template-columns: 1fr;

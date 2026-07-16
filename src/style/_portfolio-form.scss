@@ -1,3 +1,6 @@
+@use "./mixins" as *;
+@use "./variables" as *;
+
 .portfolio-form-wrapper{
     @include base-grid();
     grid-template-columns: 1fr;
